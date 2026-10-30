@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudySphere helps students organize tasks and study sessions.">
+    <title>StudySphere | Student Study Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <!-- Header and navigation -->
+    <header>
+        <h1>StudySphere</h1>
+        <p>Plan smarter. Study better.</p>
+
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#tasks">My Tasks</a>
+            <a href="#timetable">Timetable</a>
+            <a href="#tools">Study Tools</a>
+            <a href="#about">About & Feedback</a>
+            <button id="theme-toggle" type="button">Toggle Theme</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Section 1: Dashboard -->
+        <section id="home">
+            <h2>Welcome to StudySphere!</h2>
+            <p>Organize your study routine and stay on top of your goals.</p>
+
+            <div class="dashboard-cards">
+                <article class="card">
+                    <h3>Total Tasks</h3>
+                    <p id="total-tasks">0</p>
+                </article>
+
+                <article class="card">
+                    <h3>Completed Tasks</h3>
+                    <p id="completed-tasks">0</p>
+                </article>
+
+                <article class="card">
+                    <h3>Pending Tasks</h3>
+                    <p id="pending-tasks">0</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2: Task management -->
+        <section id="tasks">
+            <h2>My Study Tasks</h2>
+
+            <form id="task-form">
+                <label for="task-name">Task name</label>
+                <input type="text" id="task-name"
+                       placeholder="e.g. Revise Algebra" required>
+
+                <label for="task-subject">Subject</label>
+                <select id="task-subject" required>
+                    <option value="nil">Choose a subject</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="English">English</option>
+                    <option value="none">Other</option>
+                </select>
+
+                <label for="task-date">Deadline</label>
+                <input type="date" id="task-date">
+
+                <button type="submit">Add Task</button>
+            </form>
+
+            <label for="task-search">Search tasks</label>
+            <input type="search" id="task-search"
+                   placeholder="Search by task name or subject">
+
+            <label for="task-filter">Filter tasks</label>
+            <select id="task-filter">
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+
+            <ul id="task-list">
+                <li class="empty-message">Your tasks will appear here.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Weekly timetable -->
+        <section id="timetable">
+            <h2>My Study Timetable</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Subject</th>
+                            <th>Study Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Mathematics</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Computer Science</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Mathematics</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>English</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>Computer Science</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 4: Study calculator -->
+        <section id="tools">
+            <h2>Study Tools</h2>
+            <h3>Study Hours Calculator</h3>
+
+            <form id="calculator-form">
+                <label for="study-hours">Hours</label>
+                <input type="number" id="study-hours"
+                       min="0" max="24" value="1" required>
+
+                <label for="study-minutes">Minutes</label>
+                <input type="number" id="study-minutes"
+                       min="0" max="59" value="30" required>
+
+                <button type="submit">Calculate Duration</button>
+            </form>
+
+            <p id="calculator-result" aria-live="polite">
+                Your study duration will appear here.
+            </p>
+        </section>
+
+        <!-- Section 5: About and feedback -->
+        <section id="about">
+            <h2>About StudySphere</h2>
+            <p>
+                StudySphere is a student-focused website designed
+                to help learners manage their tasks, organize
+                their timetable and plan study sessions.
+            </p>
+
+            <h3>Send Feedback</h3>
+
+            <form id="feedback-form">
+                <label for="student-name">Your name</label>
+                <input type="text" id="student-name" required>
+
+                <label for="student-email">Your email</label>
+                <input type="email" id="student-email" required>
+
+                <label for="feedback-message">Your feedback</label>
+                <textarea id="feedback-message" rows="4"
+                          required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+
+            <p id="feedback-result" aria-live="polite"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 StudySphere. Built as an SEC front-end project.</p>
+        <p style="font-style: italic;"> MADE BY ASHISH PATEL </p>
+        <P style="font-style: italic;"> ROLL NO. 6233</P>
+        <P style="font-style: italic;"> B.sc (HONS) Mathematics</P>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+
+/* ===== 1. Global styling ===== */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #5b5bd6;
+    --primary-dark: #4444b5;
+    --background: #f5f6fc;
+    --surface: #ffffff;
+    --text: #252744;
+    --muted: #6b7088;
+    --border: #e3e5f0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ===== 2. Header and navigation ===== */
+header {
+    background: var(--surface);
+    padding: 24px 5%;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    color: var(--muted);
+    margin: 4px 0 18px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #eeeeff;
+    color: var(--primary);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+/* ===== 3. Main layout ===== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+section {
+    background: var(--surface);
+    padding: 28px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    scroll-margin-top: 20px;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+section h3 {
+    font-size: 17px;
+}
+
+/* ===== 4. Dashboard cards ===== */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.card {
+    background: #f1f1ff;
+    border: 1px solid #e2e2ff;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--muted);
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 0;
+}
+
+/* ===== 5. Forms and inputs ===== */
+form {
+    display: grid;
+    gap: 10px;
+    margin: 16px 0 24px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #d7d9e7;
+    border-radius: 8px;
+    background: white;
+    color: #252744;
+    font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #b9b9ff;
+    border-color: var(--primary);
+}
+
+form button {
+    justify-self: start;
+    margin-top: 6px;
+}
+
+/* ===== 6. Search and task list ===== */
+#task-list {
+    padding-left: 22px;
+}
+
+#task-list li {
+    margin: 10px 0;
+    padding: 12px;
+    background: #f8f8ff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+#task-list button {
+    margin: 5px;
+}
+
+/* ===== 7. Timetable ===== */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: #eeeeff;
+    color: var(--primary-dark);
+}
+
+/* ===== 8. Footer ===== */
+footer {
+    background: #252744;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(50, 50, 100, 0.10);
+}
+
+/* ===== 9. Responsive design ===== */
+@media (max-width: 700px) {
+    header {
+        padding: 20px;
+    }
+
+    main {
+        padding: 14px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 7px;
+    }
+}
+/* Dark Mode Theme */
+body.dark-mode {
+    background-color: #121826;
+    color: #f1f5f9;
+}
+
+/* Dark mode for website sections and cards */
+body.dark-mode section {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    border-color: #334155;
+}
+
+/* Dark mode for headings and paragraphs */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode label {
+    color: #f1f5f9;
+}
+
+/* Dark mode for task cards */
+body.dark-mode li {
+    background-color: #273449;
+    color: #f1f5f9;
+}
+
+/* Dark mode for input fields */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #273449;
+    color: #f1f5f9;
+    border-color: #475569;
+}
+
+/* Dark mode for timetable */
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+    border-color: #475569;
+    color: #f1f5f9;
+}
